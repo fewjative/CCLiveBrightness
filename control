@@ -1,0 +1,9 @@
+Package: com.joshdoctors.cclivebrightness
+Name: CCLiveBrightness
+Depends: mobilesubstrate
+Version: 0.0.1
+Architecture: iphoneos-arm
+Description: Makes the control center transparent when using the brightness slider.
+Maintainer: Josh Doctors
+Author: Josh Doctors
+Section: Tweaks

@@ -1,0 +1,10 @@
+{
+    entry = {
+	bundle = CCLiveBrightnessSettings;
+	cell = PSLinkCell;
+	detail = CCLiveBrightnessSettingsListController;
+	icon = CCLiveBrightnessSettings.png;
+	isController = 1;
+	label = CCLiveBrightness;
+    };
+}
