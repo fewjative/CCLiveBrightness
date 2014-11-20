@@ -25,6 +25,56 @@
 			<string>Enable Tweak</string>
 		</dict>
 		<dict>
+			<key>PostNotification</key>
+			<string>com.joshdoctors.cclivebrightness/settingschanged</string>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>com.joshdoctors.cclivebrightness</string>
+			<key>key</key>
+			<string>disableTint</string>
+			<key>label</key>
+			<string>Remove Tint Above CC</string>
+		</dict>
+		<dict>
+			<key>PostNotification</key>
+			<string>com.joshdoctors.cclivebrightness/settingschanged</string>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>com.joshdoctors.cclivebrightness</string>
+			<key>key</key>
+			<string>showSlider</string>
+			<key>label</key>
+			<string>Show Brightness Slider</string>
+		</dict>
+		<dict>
+			<key>PostNotification</key>
+			<string>com.joshdoctors.cclivebrightness/settingschanged</string>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>com.joshdoctors.cclivebrightness</string>
+			<key>key</key>
+			<string>autoCloseCC</string>
+			<key>label</key>
+			<string>Close CC*</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>footerAlignment</key>
+			<integer>1</integer>
+			<key>footerText</key>
+			<string>*Control Center will close after you have adjusted the brightness.</string>
+		</dict>
+		<dict>
 			<key>cell</key>
 			<string>PSGroupCell</string>
 			<key>label</key>
