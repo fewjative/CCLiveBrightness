@@ -1,7 +1,6 @@
 #import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 #import <substrate.h>
-
-#define SYS_VER_GREAT_OR_EQUAL(v) ([[[UIDevice currentDevice] systemVersion] compare:v options:64] != NSOrderedAscending)
 
 static BOOL enableTweak = NO;
 static BOOL autoCloseCC = NO;
@@ -12,11 +11,11 @@ static BOOL showSlider = NO;
 
 -(void)_updateDarkeningFrame
 {
+	%orig;
+	UIView * darkeningView = MSHookIvar<UIView*>(self,"_darkeningView");
+
 	if(enableTweak)
 	{
-		%orig;
-		UIView * darkeningView = MSHookIvar<UIView*>(self,"_darkeningView");
-
 		if(disableTint)
 		{	
 			darkeningView.alpha = 0.01;
@@ -30,8 +29,6 @@ static BOOL showSlider = NO;
 	}
 	else
 	{
-		%orig;
-		UIView * darkeningView = MSHookIvar<UIView*>(self,"_darkeningView");
 		darkeningView.alpha = 1;
 	}
 }
@@ -55,10 +52,9 @@ static BOOL showSlider = NO;
 			CALayer * maskLayer = [CALayer layer];
 			maskLayer.backgroundColor = [UIColor blackColor].CGColor;
 			maskLayer.frame = CGRectMake([self view].frame.origin.x,[self view].frame.origin.y,[self view].frame.size.width,[self view].frame.size.height);
-			NSLog(@"mask: %@",maskLayer);
 			sbcccv.layer.mask = maskLayer;
 
-			if(!SYS_VER_GREAT_OR_EQUAL(@"8.0"))
+			if([[[UIDevice currentDevice] systemVersion] floatValue] < 8.0)
 			{
 				//iOS7
 				NSLog(@"disableTint fix for iOS7");
@@ -93,7 +89,7 @@ static BOOL showSlider = NO;
 			UIView * sbcccv = MSHookIvar<UIView*>(parentView,"_contentContainerView");
 			sbcccv.layer.mask = nil;
 
-			if(!SYS_VER_GREAT_OR_EQUAL(@"8.0"))
+			if([[[UIDevice currentDevice] systemVersion] floatValue] < 8.0)
 			{
 				//iOS7
 				NSLog(@"disableTint fix for iOS7");
